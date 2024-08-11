@@ -4,14 +4,18 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
-// console.log(process.env.GEMINI_KEY_ID);
+const cors = require('cors');
+
 const corsOptions = {
-  origin: "*", // Your frontend URL
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
+  maxAge: 3600, // 1 hour
 };
 
+app.use(express.json());
 app.use(cors(corsOptions));
 
-app.use(express.json());
 
 const PORT =5000;
 
