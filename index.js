@@ -5,7 +5,7 @@ const cors=require('cors');
 const app = express();
 const corsOptions = {
   origin: 'http://localhost:5173', // Your frontend URL
-  methods: 'GET,POST',
+  methods: ['GET,POST'],
   allowedHeaders: 'Content-Type',
 };
 
@@ -16,7 +16,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.get('/',()=>{
+app.get('/',(req,res)=>{
   res.send("Hello I am active");
 })
 app.post('/api/generate', async (req, res) => {
