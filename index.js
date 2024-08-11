@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -16,11 +14,12 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
+app.use('/', (req, res) => {
   res.send("Hello I am active");
 })
 
 app.post('/api/generate', async (req, res) => {
+  return res.json({id:process.env.VITE_GEMINI_KEY_ID});
   try {
     console.log(req.body);
     const response = await axios.post(
