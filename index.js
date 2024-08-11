@@ -4,7 +4,7 @@ const axios = require('axios');
 const cors=require('cors');
 const app = express();
 const corsOptions = {
-  origin: 'http://localhost:5173', // Your frontend URL
+  origin: 'https://chat-ai-application-frontend.vercel.app/', // Your frontend URL
   methods: ['GET,POST'],
   allowedHeaders: 'Content-Type',
 };
