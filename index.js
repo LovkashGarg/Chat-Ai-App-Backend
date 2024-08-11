@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 const corsOptions = {
-  origin: 'https://chat-ai-application-frontend.vercel.app/', // Your frontend URL
+  origin: 'https://chat-ai-application-frontend.vercel.app', // Your frontend URL
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 };
@@ -12,14 +12,14 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-const PORT = process.env.PORT || 5000;
+const PORT =5000;
 
 app.use('/', (req, res) => {
   res.send("Hello I am active");
 })
 
-app.post('api/generate', async (req, res) => {
-  // return res.json({id:process.env.VITE_GEMINI_KEY_ID});
+app.post('/api/generate', async (req, res) => {
+  console.log(process.env.VITE_GEMINI_KEY_ID);
   try {
     console.log(req.body);
     const response = await axios.post(
