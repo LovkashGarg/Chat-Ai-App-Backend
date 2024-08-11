@@ -6,7 +6,7 @@ const app = express();
 require('dotenv').config();
 // console.log(process.env.GEMINI_KEY_ID);
 const corsOptions = {
-  origin: 'https://chat-ai-application-frontend.vercel.app', // Your frontend URL
+  origin: "*", // Your frontend URL
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 };
