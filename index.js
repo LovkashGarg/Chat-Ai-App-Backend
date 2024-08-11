@@ -4,7 +4,7 @@ const axios = require('axios');
 const cors=require('cors');
 const app = express();
 const corsOptions = {
-  origin: 'https://chat-ai-application-frontend.vercel.app', // Your frontend URL
+  origin: 'http://localhost:5173', // Your frontend URL
   methods: 'GET,POST',
   allowedHeaders: 'Content-Type',
 };
@@ -16,6 +16,9 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
+app.get('/',()=>{
+  res.send("Hello I am active");
+})
 app.post('/api/generate', async (req, res) => {
   try {
     console.log(req.body);
