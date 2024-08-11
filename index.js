@@ -7,8 +7,6 @@ require('dotenv').config();
 // console.log(process.env.GEMINI_KEY_ID);
 const corsOptions = {
   origin: "*", // Your frontend URL
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
 };
 
 app.use(cors(corsOptions));
