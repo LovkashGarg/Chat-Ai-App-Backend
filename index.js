@@ -3,7 +3,14 @@ const express = require('express');
 const axios = require('axios');
 const cors=require('cors');
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: 'https://chat-ai-application-frontend.vercel.app', // Your frontend URL
+  methods: 'GET,POST',
+  allowedHeaders: 'Content-Type',
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
