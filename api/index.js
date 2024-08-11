@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 
 const corsOptions = {
-  origin: 'https://chat-ai-application-frontend.vercel.app/', // Your frontend URL
+  origin: 'https://chat-ai-application-frontend.vercel.app', // Your frontend URL
   methods: ['GET', 'POST'],
   allowedHeaders: 'Content-Type',
 };
