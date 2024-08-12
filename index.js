@@ -18,7 +18,7 @@ app.use(cors());
 
 const PORT =5000;
 
-app.get('/', (req, res) => {
+app.use('/', (req, res) => {
   res.send("Hello I am active");
 })
 // app.use('/',(req,res)=>{
