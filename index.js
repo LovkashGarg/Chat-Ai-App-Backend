@@ -6,16 +6,15 @@ const app = express();
 require('dotenv').config();
 const cors = require('cors');
 
-const corsOptions = {
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
-  maxAge: 3600, // 1 hour
-};
+// const corsOptions = {
+//   origin: '*',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
+//   // maxAge: 3600, // 1 hour
+// };
 
 app.use(express.json());
-app.use(cors(corsOptions));
-
+app.use(cors());
 
 const PORT =5000;
 
