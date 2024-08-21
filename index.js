@@ -4,7 +4,7 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
-const cors = require('cors');
+// const cors = require('cors');
 
 // const corsOptions = {
 //   origin: '*',
@@ -18,7 +18,7 @@ app.use(cors());
 
 const PORT =5000;
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send("Hello I am active");
 })
 // app.use('/',(req,res)=>{
@@ -27,7 +27,7 @@ app.use('/', (req, res) => {
 
 app.post('/api/generate', async (req, res) => {
   // return res.json("Hello bro");
-  console.log("hello" + process.env.VITE_GEMINI_KEY_ID);
+  console.log("hello" + process.env.GEMINI_KEY_ID);
   try {
     console.log(req.body);
     const response = await axios.post(
